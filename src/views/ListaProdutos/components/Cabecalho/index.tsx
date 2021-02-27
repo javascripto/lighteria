@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 24,
+    paddingVertical: 24,
+    paddingHorizontal: 6,
   },
   containerSacola: {
     backgroundColor: '#fff',
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   titulo: {
-    fontFamily: 'OpenSans-ExtraBold',
+    fontFamily: 'OpenSans-Bold',
     fontSize: 28,
   },
   image: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   containerDescricao: {
-    paddingHorizontal: 16,
+    // paddingHorizontal: 16,
   },
   separador: {
     borderWidth: 0.5,

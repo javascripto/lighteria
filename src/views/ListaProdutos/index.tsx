@@ -1,18 +1,26 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
+
+import { DATA } from '../../utils/data';
+import { Item } from './components/Produto';
 import Cabecalho from './components/Cabecalho';
 
 export default function ListaProdutos() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Cabecalho />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <FlatList
+        numColumns={2}
+        data={DATA}
+        renderItem={({ item }) => <Item {...item} />}
+        keyExtractor={(item) => item.id}
+        ListHeaderComponent={<Cabecalho />}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f4f0f4',
+    marginHorizontal: 24,
   },
 });
