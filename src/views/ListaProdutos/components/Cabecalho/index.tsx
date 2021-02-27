@@ -1,6 +1,17 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+
 import { iconBag } from '../../../../assets';
+import {
+  COR_DE_FUNDO,
+  FONT_FAMILY_BOLD,
+  FONT_FAMILY_REGULAR,
+  FONT_SIZE_MEDIUM,
+  FONT_SIZE_XX_LARGE,
+  LIGHTERGRAY,
+  LIGHTGRAY,
+  WHITE,
+} from '../../../../styles/styles';
 
 export default function Cabecalho() {
   return (
@@ -30,13 +41,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
   },
   containerSacola: {
-    backgroundColor: '#fff',
+    backgroundColor: WHITE,
     padding: 18,
     borderRadius: 30,
   },
   titulo: {
-    fontFamily: 'OpenSans-Bold',
-    fontSize: 28,
+    fontFamily: FONT_FAMILY_BOLD,
+    fontSize: FONT_SIZE_XX_LARGE,
   },
   image: {
     width: 30,
@@ -47,7 +58,7 @@ const styles = StyleSheet.create({
   },
   separador: {
     borderWidth: 0.5,
-    borderColor: '#A1A5AA',
+    borderColor: LIGHTGRAY,
   },
   containerTexto: {
     flexDirection: 'row',
@@ -57,9 +68,9 @@ const styles = StyleSheet.create({
   textoDescricao: {
     padding: 34,
     // padding: 24,
-    backgroundColor: '#F4F0F4',
-    fontFamily: 'OpenSans-Regular',
-    color: '#A1A5AA',
-    fontSize: 16,
+    backgroundColor: COR_DE_FUNDO,
+    fontFamily: FONT_FAMILY_REGULAR,
+    color: LIGHTERGRAY,
+    fontSize: FONT_SIZE_MEDIUM,
   },
 });
