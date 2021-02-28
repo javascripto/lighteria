@@ -33,7 +33,7 @@ export default function DescricaoItem(props: TItem) {
             <Image style={styles.imagem} source={props.imagem} />
           </View>
           <View>
-            <Text>{props.itemDesc}</Text>
+            <Text style={styles.itemDescricao}>{props.itemDesc}</Text>
           </View>
           <View style={styles.rodape}>
             <Text style={styles.moeda}>{formataValor(props.preco)}</Text>
@@ -64,6 +64,13 @@ const styles = StyleSheet.create({
     padding: 28,
     width: '80%',
     elevation: 4,
+    shadowColor: '#000',
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
   },
   imagem: {
     width: 30,
