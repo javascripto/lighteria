@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 import {
@@ -17,9 +16,10 @@ import {
 import Botao from '../../../../components/Botao';
 import { formataValor } from '../../../../utils/utils';
 import { Item as TItem } from '../../../../utils/data';
+import { useDataContext } from '../../../../provider';
 
 export default function DescricaoItem(props: TItem) {
-  const navigation = useNavigation();
+  const { adicionarItem } = useDataContext();
   return (
     <View style={styles.itemContainer}>
       <View style={styles.itemPosicao}>
@@ -37,10 +37,7 @@ export default function DescricaoItem(props: TItem) {
           </View>
           <View style={styles.rodape}>
             <Text style={styles.moeda}>{formataValor(props.preco)}</Text>
-            <Botao
-              titulo="COMPRAR"
-              onPress={() => navigation.navigate('Checkout')}
-            />
+            <Botao titulo="COMPRAR" onPress={() => adicionarItem(props)} />
           </View>
         </View>
       </View>
