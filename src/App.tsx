@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -9,6 +9,7 @@ import DetalhesProduto from './views/DetalhesProduto';
 
 const Stack = createStackNavigator();
 const { Screen, Navigator } = Stack;
+const Checkout = () => <View />;
 
 export default function App() {
   return (
@@ -23,6 +24,11 @@ export default function App() {
           <Screen
             name="DetalhesProduto"
             component={DetalhesProduto}
+            options={{ headerShown: false }}
+          />
+          <Screen
+            name="Checkout"
+            component={Checkout}
             options={{ headerShown: false }}
           />
         </Navigator>
