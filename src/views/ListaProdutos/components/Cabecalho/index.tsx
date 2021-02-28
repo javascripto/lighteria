@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-import { iconBag } from '../../../../assets';
+import Sacola from '../../../../components/Sacola';
 import {
   COR_DE_FUNDO,
   FONT_FAMILY_BOLD,
@@ -10,7 +10,6 @@ import {
   FONT_SIZE_XX_LARGE,
   LIGHTERGRAY,
   LIGHTGRAY,
-  WHITE,
 } from '../../../../styles/styles';
 
 export default function Cabecalho() {
@@ -18,11 +17,9 @@ export default function Cabecalho() {
     <>
       <View style={styles.containerTitulo}>
         <Text style={styles.titulo}>Lighteria</Text>
-        <View style={styles.containerSacola}>
-          <Image style={styles.image} source={iconBag} />
-        </View>
+        <Sacola />
       </View>
-      <View style={styles.containerDescricao}>
+      <View>
         <View style={styles.separador} />
         <View style={styles.containerTexto}>
           <Text style={styles.textoDescricao}>Categorias</Text>
@@ -40,21 +37,9 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     paddingHorizontal: 6,
   },
-  containerSacola: {
-    backgroundColor: WHITE,
-    padding: 18,
-    borderRadius: 30,
-  },
   titulo: {
     fontFamily: FONT_FAMILY_BOLD,
     fontSize: FONT_SIZE_XX_LARGE,
-  },
-  image: {
-    width: 30,
-    height: 30,
-  },
-  containerDescricao: {
-    // paddingHorizontal: 16,
   },
   separador: {
     borderWidth: 0.5,
