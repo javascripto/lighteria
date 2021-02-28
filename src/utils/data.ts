@@ -60,3 +60,8 @@ export const DATA = [
       'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below ',
   },
 ];
+
+type ArrayElement<ArrayType extends readonly unknown[]> = 
+  ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+
+export type Item = ArrayElement<typeof DATA>

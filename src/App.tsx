@@ -3,8 +3,9 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import ListaProdutos from './views/ListaProdutos';
 import { COR_DE_FUNDO } from './styles/styles';
+import ListaProdutos from './views/ListaProdutos';
+import DetalhesProduto from './views/DetalhesProduto';
 
 const Stack = createStackNavigator();
 const { Screen, Navigator } = Stack;
@@ -17,6 +18,11 @@ export default function App() {
           <Screen
             name="ListaProdutos"
             component={ListaProdutos}
+            options={{ headerShown: false }}
+          />
+          <Screen
+            name="DetalhesProduto"
+            component={DetalhesProduto}
             options={{ headerShown: false }}
           />
         </Navigator>

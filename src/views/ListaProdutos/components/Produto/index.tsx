@@ -1,17 +1,24 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import {
-  FONT_FAMILY_SEMI_BOLD,
-  FONT_SIZE_SMALL,
-  WHITE,
-} from '../../../../styles/styles';
+import { useNavigation } from '@react-navigation/native';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-export function Item({ imagem, titulo }) {
+import {
+  WHITE,
+  FONT_SIZE_SMALL,
+  FONT_FAMILY_SEMI_BOLD,
+} from '../../../../styles/styles';
+import { Item as TItem } from '../../../../utils/data';
+
+export function Item(props: TItem) {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <Image source={imagem} style={styles.imagem} resizeMode="contain" />
-      <Text style={styles.texto}>{titulo}</Text>
-    </View>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('DetalhesProduto', { item: props })}
+    >
+      <Image source={props.imagem} style={styles.imagem} resizeMode="contain" />
+      <Text style={styles.texto}>{props.titulo}</Text>
+    </TouchableOpacity>
   );
 }
 
